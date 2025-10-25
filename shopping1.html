@@ -1,0 +1,45 @@
+<!-- Mohamed Lamine Tourki , October 24, 2025-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Discount</title>
+</head>
+<body>
+  <h1>Project 3</h1>
+  <h2>Mohamed Lamine Tourki</h2>
+
+  <h3>Questions</h3>
+  <ol>
+    <li>Name a situation where you would need to create an "if" statement. (There are many answers to this question.)</li>
+    <li>When comparing values, in what data type is the result stored? (number, string, or Boolean?)</li>
+  </ol>
+
+  <h3>Answers</h3>
+  <ol>
+    <li>
+      Using if statements is essential for validating user input or checking correctness. 
+      For example, if a user tries to enter an invalid name when you're asking for a user's name, 
+      JavaScript can catch the error and prevent invalid input.
+    </li>
+    <li>
+      When comparing values, the data type returned is a Boolean value (true or false).
+    </li>
+  </ol>
+
+  <script>
+    let total = prompt("How much did you spend?");
+    let confirmed = confirm("$" + total + " total? Click OK to continue!");
+    if (confirmed) {
+      if (total >= 100) {
+        alert("20% off");
+      } else if (total >= 50) {
+        alert("10% off");
+      } else {
+        alert("No discount");
+      }
+    }
+  </script>
+</body>
+</html>
