@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discount Cart</title>
+</head>
+<body>
+  <h1>Shopping Cart (Console Output)</h1>
+  <p>Open DevTools → Console, then click Start.</p>
+  <button id="start">Start</button>
+
+  <script>
+    (function () {
+      function runCart() {
+        let keepAdding = true;
+        let itemName;
+        let itemPrice;
+        let total = 0;
+
+        do {
+          itemName = prompt("Enter item name (or 'done' to finish):");
+          if (itemName === null) {
+            keepAdding = false;
+            break;
+          }
+
+          if (itemName.trim().toLowerCase() !== "done") {
+            itemPrice = prompt(`Enter price for "${itemName}" (numbers only):`);
+            if (itemPrice === null) continue;
+            const priceNumber = Number(itemPrice);
+
+            if (!Number.isFinite(priceNumber)) {
+              console.log(`Skipped "${itemName}" — invalid price`);
+            } else {
+              total += priceNumber;
+              console.log(`Added ${itemName}: $${priceNumber.toFixed(2)} (subtotal: $${total.toFixed(2)})`);
+            }
+          } else {
+            keepAdding = false;
+          }
+        } while (keepAdding);
+
+        let discount = 0;
+
+        if (total > 100) {
+          discount = total * 0.20;
+          total = total - discount;
+          console.log(`You received a discount of $${discount.toFixed(2)}!`);
+        } else {
+          console.log("No discount applied.");
+        }
+
+        console.log(`Final total: $${total.toFixed(2)}`);
+      }
+
+      document.getElementById("start").addEventListener("click", runCart);
+      if (window.top === window.self) {}
+    })();
+  </script>
+</body>
+</html>
