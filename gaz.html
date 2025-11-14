@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gas Average Project</title>
+</head>
+<body>
+    <!-- Name: Mohamed Lamine Tourki  |  Date: 11/13/2025 -->
+
+    <header>
+        <h1>Functions and Gas Average Project</h1>
+        <p>This page answers the questions about functions and runs a JavaScript program
+           that calculates the average weekly gas bill.</p>
+    </header>
+
+    <!--  QUESTIONS SECTION  -->
+    <section>
+        <h2>Questions</h2>
+
+        <h3>1. What is the purpose of a function?</h3>
+        <p>
+            A function is a reusable block of code that performs a specific task.
+            It lets us organize code, avoid repeating ourselves, and make programs
+            easier to read and maintain.
+        </p>
+
+        <h3>2. Loop Question</h3>
+        <p><strong>Code:</strong></p>
+        <pre>
+for (let i = 1; i &lt;= 5; i++) {
+    console.log("Snack #" + i + " given to customer");
+}
+        </pre>
+
+        <p><strong>Question:</strong> Using the code above, how many times does the loop execute?</p>
+        <p><strong>Answer:</strong> The loop executes <strong>5 times</strong>.</p>
+
+        <h3>Activity</h3>
+        <p>Click the button and then check the browser console for the snack messages.</p>
+        <button type="button" onclick="runSnackLoop()">Run Snack Loop</button>
+    </section>
+
+    <!--  EXERCISES SECTION  -->
+    <section>
+        <h2>Gas Average Exercises</h2>
+        <p>
+            This script will ask the user for their name and several weekly gas totals.
+            It will calculate the average weekly gas bill using a function, then show
+            the results with <code>confirm()</code> messages.
+        </p>
+        <p><strong>Note:</strong> The gas average script will start automatically when the page loads.</p>
+    </section>
+
+    <!-- JAVASCRIPT  -->
+    <script>
+        function runSnackLoop() {
+            for (let i = 1; i <= 5; i++) {
+                console.log("Snack #" + i + " given to customer");
+            }
+            confirm("Snack loop complete. Open the console to see the messages.");
+        }
+
+        let entryCount = 0;
+        let username = prompt("Enter your name:");
+
+        function calcGasAvg() {
+            let total = 0;
+            let weeklyGas = parseFloat(
+                prompt("Enter your first week's gas total. Enter -1 when you are done.")
+            );
+
+            while (weeklyGas !== -1) {
+                total += weeklyGas;
+                entryCount++;
+                weeklyGas = parseFloat(
+                    prompt("Enter your next week's gas total. Enter -1 when you are done.")
+                );
+            }
+
+            let averageGas;
+            if (entryCount > 0) {
+                averageGas = total / entryCount;
+            } else {
+                averageGas = 0;
+            }
+            return averageGas;
+        }
+
+        let gas = calcGasAvg();
+
+        confirm(username + "'s average weekly gas bill is $" + gas.toFixed(2));
+
+        if (entryCount === 0) {
+            confirm("No gas totals were entered.");
+        } else if (entryCount === 1) {
+            confirm(`You entered ${entryCount} gas total.`);
+        } else {
+            confirm(`You entered ${entryCount} gas totals.`);
+        }
+    </script>
+</body>
+</html>
