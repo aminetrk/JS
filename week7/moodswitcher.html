@@ -1,0 +1,74 @@
+<!--Name : Mohamed Lamine Tourki
+Date : 11/20/2025 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Changer Project</title>
+
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            transition: 0.3s;
+        }
+
+        #moodButtons button {
+            margin: 6px;
+            padding: 10px 20px;
+            border: none;
+            background: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #moodButtons button:hover {
+            background: #cfcfcf;
+        }
+
+        #moodDisplay {
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>How are you feeling?</h1>
+    <p>Click a mood to change the vibe.</p>
+
+    <!-- Step 3: Mood buttons -->
+    <div id="moodButtons">
+        <button class="mood-btn" data-mood="happy">Happy</button>
+        <button class="mood-btn" data-mood="calm">Calm</button>
+        <button class="mood-btn" data-mood="excited">Excited</button>
+        <button class="mood-btn" data-mood="chill">Chill</button>
+        <button class="mood-btn" data-mood="mysterious">Mysterious</button>
+        <!-- Bonus: Reset -->
+        <button class="mood-btn" data-mood="reset">Reset</button>
+    </div>
+
+    <p id="moodDisplay">Choose a mood...</p>
+
+    <script src="mood.js"></script>
+
+    <hr>
+
+    <h2>Questions</h2>
+
+    <p><strong>1. Why is the JavaScript textContent property safer than innerHTML?</strong></p>
+    <p>textContent is safer because it only adds plain text. innerHTML can run HTML or scripts, which can be unsafe. textContent protects the page from bad code.</p>
+
+    <p><strong>2. How do the id="text" attribute and the DOM property relate?</strong></p>
+    <p>The id="text" is the name of the element in HTML. When we use getElementById("text"), JavaScript finds that same element, so the variable and the HTML element are connected.</p>
+
+    <p><strong>3. What happens if we run text.textContent = "Hello!" ?</strong></p>
+    <p>The text inside the element with id="text" will change to the word "Hello!".</p>
+
+</body>
+</html>
