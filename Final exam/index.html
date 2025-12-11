@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Budget / Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Personal Budget / Expense Tracker</h1>
+    <p id="today"></p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Step 1: Enter Your Monthly Income</h2>
+      <label for="incomeInput">Income ($):</label>
+      <input type="number" id="incomeInput" min="0" step="0.01" placeholder="1500">
+      <button id="saveIncomeBtn">Save Income</button>
+      <p id="incomeDisplay">Current income: $0.00</p>
+    </section>
+
+    <section class="card">
+      <h2>Step 2: Add an Expense</h2>
+
+      <label for="expenseNameInput">Expense name:</label>
+      <input type="text" id="expenseNameInput" placeholder="Rent">
+
+      <label for="amountInput">Amount ($):</label>
+      <input type="number" id="amountInput" min="0" step="0.01" placeholder="650">
+
+      <label for="categorySelect">Category:</label>
+      <select id="categorySelect">
+        <option value="Housing">Housing</option>
+        <option value="Food">Food</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button id="addExpenseBtn">Add Expense</button>
+      <button id="clearAllBtn">Clear All</button>
+
+      <p id="errorMessage" class="warning"></p>
+    </section>
+
+    <section class="card">
+      <h2>Expense List</h2>
+      <ul id="expenseList">
+        <!-- JavaScript will add <li> items here -->
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Summary</h2>
+      <p id="summaryIncome">Total income: $0.00</p>
+      <p id="summaryExpenses">Total expenses: $0.00</p>
+      <p id="summaryLeft">Money left: $0.00</p>
+      <p id="statusMessage"></p>
+      <p id="tipMessage" class="tip"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>WEB 114 Final Project – Budget Tracker</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
